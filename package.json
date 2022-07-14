@@ -1,0 +1,26 @@
+{
+  "name": "scapper-express",
+  "version": "1.0.0",
+  "description": "A web scapper built using express and cheerio",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Yash-RajSingh/Scapper-express.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yash-RajSingh/Scapper-express/issues"
+  },
+  "homepage": "https://github.com/Yash-RajSingh/Scapper-express#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "cheerio": "^1.0.0-rc.12",
+    "cors": "^2.8.5",
+    "express": "^4.18.1"
+  }
+}
