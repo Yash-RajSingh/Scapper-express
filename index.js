@@ -5,16 +5,24 @@ const cheerio = require("cheerio");
 const cors = require("cors");
 
 const app = express();
-const webDevUrl = "https://internshala.com/internships/keywords-web%20development/";
-const graphicDesingUrl ="https://internshala.com/internships/keywords-graphic%20design/";
-const campusAmbassadorUrl ="https://internshala.com/internships/keywords-Campus%20Ambassador/";
-const contentWritingUrl ="https://internshala.com/internships/keywords-content%20writing/";
-const softwareEngineeringUrl ="https://internshala.com/internships/keywords-software%20engineering/";
-const legalUrl ="https://internshala.com/internships/keywords-law/";
-const businessDevelopementUrl ="https://internshala.com/internships/keywords-business/";
-const dataAnalyticsUrl ="https://internshala.com/internships/keywords-data%20analytics/";
-const HRUrl ="https://internshala.com/internships/keywords-human%20resource/";
-const appDevelopmentUrl ="https://internshala.com/internships/keywords-app%20development/";
+const webDevUrl =
+  "https://internshala.com/internships/keywords-web%20development/";
+const graphicDesingUrl =
+  "https://internshala.com/internships/keywords-graphic%20design/";
+const campusAmbassadorUrl =
+  "https://internshala.com/internships/keywords-Campus%20Ambassador/";
+const contentWritingUrl =
+  "https://internshala.com/internships/keywords-content%20writing/";
+const softwareEngineeringUrl =
+  "https://internshala.com/internships/keywords-software%20engineering/";
+const legalUrl = "https://internshala.com/internships/keywords-law/";
+const businessDevelopementUrl =
+  "https://internshala.com/internships/keywords-business/";
+const dataAnalyticsUrl =
+  "https://internshala.com/internships/keywords-data%20analytics/";
+const HRUrl = "https://internshala.com/internships/keywords-human%20resource/";
+const appDevelopmentUrl =
+  "https://internshala.com/internships/keywords-app%20development/";
 
 app.use(cors());
 
@@ -53,12 +61,15 @@ app.get("/openings/web_development", (req, res) => {
           .text()
           .trimStart()
           .trimEnd();
+
+        const link = $(element).find("a").attr("href");
         Internship_openings.push({
           role,
           company,
           location,
           stipend,
           apply_by,
+          link,
         });
       });
       res.send(Internship_openings);
@@ -95,12 +106,14 @@ app.get("/openings/graphic_design", (req, res) => {
           .text()
           .trimStart()
           .trimEnd();
+          const link = $(element).find("a").attr("href");
         Internship_openings.push({
           role,
           company,
           location,
           stipend,
           apply_by,
+          link
         });
       });
       res.send(Internship_openings);
@@ -137,12 +150,14 @@ app.get("/openings/campus_ambassador", (req, res) => {
           .text()
           .trimStart()
           .trimEnd();
+          const link = $(element).find("a").attr("href");
         Internship_openings.push({
           role,
           company,
           location,
           stipend,
           apply_by,
+          link
         });
       });
       res.send(Internship_openings);
@@ -179,12 +194,14 @@ app.get("/openings/content_writing", (req, res) => {
           .text()
           .trimStart()
           .trimEnd();
+          const link = $(element).find("a").attr("href");
         Internship_openings.push({
           role,
           company,
           location,
           stipend,
           apply_by,
+          link
         });
       });
       res.send(Internship_openings);
@@ -221,12 +238,14 @@ app.get("/openings/software_engineering", (req, res) => {
           .text()
           .trimStart()
           .trimEnd();
+          const link = $(element).find("a").attr("href");
         Internship_openings.push({
           role,
           company,
           location,
           stipend,
           apply_by,
+          link
         });
       });
       res.send(Internship_openings);
@@ -263,12 +282,14 @@ app.get("/openings/legal", (req, res) => {
           .text()
           .trimStart()
           .trimEnd();
+          const link = $(element).find("a").attr("href");
         Internship_openings.push({
           role,
           company,
           location,
           stipend,
           apply_by,
+          link
         });
       });
       res.send(Internship_openings);
@@ -305,12 +326,14 @@ app.get("/openings/business_development", (req, res) => {
           .text()
           .trimStart()
           .trimEnd();
+          const link = $(element).find("a").attr("href");
         Internship_openings.push({
           role,
           company,
           location,
           stipend,
           apply_by,
+          link
         });
       });
       res.send(Internship_openings);
@@ -347,12 +370,14 @@ app.get("/openings/data_analytics", (req, res) => {
           .text()
           .trimStart()
           .trimEnd();
+          const link = $(element).find("a").attr("href");
         Internship_openings.push({
           role,
           company,
           location,
           stipend,
           apply_by,
+          link
         });
       });
       res.send(Internship_openings);
@@ -389,12 +414,14 @@ app.get("/openings/human_resource", (req, res) => {
           .text()
           .trimStart()
           .trimEnd();
+          const link = $(element).find("a").attr("href");
         Internship_openings.push({
           role,
           company,
           location,
           stipend,
           apply_by,
+          link
         });
       });
       res.send(Internship_openings);
@@ -431,12 +458,14 @@ app.get("/openings/app_development", (req, res) => {
           .text()
           .trimStart()
           .trimEnd();
+          const link = $(element).find("a").attr("href");
         Internship_openings.push({
           role,
           company,
           location,
           stipend,
           apply_by,
+          link
         });
       });
       res.send(Internship_openings);
