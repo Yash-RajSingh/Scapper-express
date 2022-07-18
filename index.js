@@ -61,7 +61,7 @@ app.get("/openings/web_development", (req, res) => {
           .text()
           .trimStart()
           .trimEnd();
-
+        const logo = $(element).find(".internship_logo > img").attr("src");
         const link = $(element).find("a").attr("href");
         Internship_openings.push({
           role,
@@ -70,6 +70,7 @@ app.get("/openings/web_development", (req, res) => {
           stipend,
           apply_by,
           link,
+          logo,
         });
       });
       res.send(Internship_openings);
@@ -106,14 +107,16 @@ app.get("/openings/graphic_design", (req, res) => {
           .text()
           .trimStart()
           .trimEnd();
-          const link = $(element).find("a").attr("href");
+        const logo = $(element).find(".internship_logo > img").attr("src");
+        const link = $(element).find("a").attr("href");
         Internship_openings.push({
           role,
           company,
           location,
           stipend,
           apply_by,
-          link
+          link,
+          logo,
         });
       });
       res.send(Internship_openings);
@@ -150,14 +153,16 @@ app.get("/openings/campus_ambassador", (req, res) => {
           .text()
           .trimStart()
           .trimEnd();
-          const link = $(element).find("a").attr("href");
+        const logo = $(element).find(".internship_logo > img").attr("src");
+        const link = $(element).find("a").attr("href");
         Internship_openings.push({
           role,
           company,
           location,
           stipend,
           apply_by,
-          link
+          link,
+          logo,
         });
       });
       res.send(Internship_openings);
@@ -194,14 +199,16 @@ app.get("/openings/content_writing", (req, res) => {
           .text()
           .trimStart()
           .trimEnd();
-          const link = $(element).find("a").attr("href");
+        const logo = $(element).find(".internship_logo > img").attr("src");
+        const link = $(element).find("a").attr("href");
         Internship_openings.push({
           role,
           company,
           location,
           stipend,
           apply_by,
-          link
+          link,
+          logo,
         });
       });
       res.send(Internship_openings);
@@ -238,14 +245,16 @@ app.get("/openings/software_engineering", (req, res) => {
           .text()
           .trimStart()
           .trimEnd();
-          const link = $(element).find("a").attr("href");
+        const logo = $(element).find(".internship_logo > img").attr("src");
+        const link = $(element).find("a").attr("href");
         Internship_openings.push({
           role,
           company,
           location,
           stipend,
           apply_by,
-          link
+          link,
+          logo,
         });
       });
       res.send(Internship_openings);
@@ -282,14 +291,16 @@ app.get("/openings/legal", (req, res) => {
           .text()
           .trimStart()
           .trimEnd();
-          const link = $(element).find("a").attr("href");
+        const logo = $(element).find(".internship_logo > img").attr("src");
+        const link = $(element).find("a").attr("href");
         Internship_openings.push({
           role,
           company,
           location,
           stipend,
           apply_by,
-          link
+          link,
+          logo,
         });
       });
       res.send(Internship_openings);
@@ -326,14 +337,16 @@ app.get("/openings/business_development", (req, res) => {
           .text()
           .trimStart()
           .trimEnd();
-          const link = $(element).find("a").attr("href");
+        const logo = $(element).find(".internship_logo > img").attr("src");
+        const link = $(element).find("a").attr("href");
         Internship_openings.push({
           role,
           company,
           location,
           stipend,
           apply_by,
-          link
+          link,
+          logo,
         });
       });
       res.send(Internship_openings);
@@ -370,14 +383,16 @@ app.get("/openings/data_analytics", (req, res) => {
           .text()
           .trimStart()
           .trimEnd();
-          const link = $(element).find("a").attr("href");
+        const logo = $(element).find(".internship_logo > img").attr("src");
+        const link = $(element).find("a").attr("href");
         Internship_openings.push({
           role,
           company,
           location,
           stipend,
           apply_by,
-          link
+          link,
+          logo,
         });
       });
       res.send(Internship_openings);
@@ -414,14 +429,16 @@ app.get("/openings/human_resource", (req, res) => {
           .text()
           .trimStart()
           .trimEnd();
-          const link = $(element).find("a").attr("href");
+        const logo = $(element).find(".internship_logo > img").attr("src");
+        const link = $(element).find("a").attr("href");
         Internship_openings.push({
           role,
           company,
           location,
           stipend,
           apply_by,
-          link
+          link,
+          logo,
         });
       });
       res.send(Internship_openings);
@@ -458,14 +475,16 @@ app.get("/openings/app_development", (req, res) => {
           .text()
           .trimStart()
           .trimEnd();
-          const link = $(element).find("a").attr("href");
+        const logo = $(element).find(".internship_logo > img").attr("src");
+        const link = $(element).find("a").attr("href");
         Internship_openings.push({
           role,
           company,
           location,
           stipend,
           apply_by,
-          link
+          link,
+          logo,
         });
       });
       res.send(Internship_openings);
