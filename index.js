@@ -40,14 +40,14 @@ app.get("/openings/web_development", (req, res) => {
       const $ = cheerio.load(html);
       const Internship_openings = [];
       $(".internship_meta", html).each(function (index, element) {
-        const role = $(element).find(".profile").text().trimStart().trimEnd();
+        const role = $(element).find(".job-title-href").text().trimStart().trimEnd();
         const company = $(element)
           .find(".company_name")
           .text()
-          .trimStart()
-          .trimEnd();
+          .trimStart()?.split("\n")?.[0]
+          .trimEnd()
         const location = $(element)
-          .find(".location_link")
+          .find(".locations > span > a")
           .text()
           .trimStart()
           .trimEnd();
@@ -57,12 +57,17 @@ app.get("/openings/web_development", (req, res) => {
           .trimStart()
           .trimEnd();
         const apply_by = $(element)
-          .find(".apply_by > .item_body")
+          .find(".ic-16-calendar ~ span")
           .text()
           .trimStart()
           .trimEnd();
+
         const logo = $(element).find(".internship_logo > img").attr("src");
         const link = $(element).find("a").attr("href");
+        const skills = $(element)
+          .find(".job_skills .job_skill") // note the space, not >
+          .map((_, el) => $(el).text().trim())
+          .get();""
         Internship_openings.push({
           role,
           company,
@@ -71,6 +76,7 @@ app.get("/openings/web_development", (req, res) => {
           apply_by,
           link,
           logo,
+          skills
         });
       });
       res.send(Internship_openings);
