@@ -1,57 +1,91 @@
 
-# Intenship Webscrapper
+# Internship Scraper API
 
-A tool that scrapes the "Internshala" website for fetching data about internship openings in different fields.
-## Tech Stack
+A TypeScript-based web scraper that fetches internship listings from Internshala across various categories.
 
-![Express js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
-![Axios](https://img.shields.io/badge/-Axios-red)
-![Cheerio](https://img.shields.io/badge/-Cheerio-%23135589)
-![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
-
-## API Reference
-
-#### Base URL
+## Project Structure
 
 ```
-https://internscrapper.herokuapp.com/openings/
+src/
+├── controllers/        # Request handlers
+│   └── internshipController.ts
+├── services/          # Business logic
+│   └── scraper.ts
+├── routes/           # Route definitions
+│   └── internshipRoutes.ts
+├── types/            # TypeScript interfaces
+│   └── internship.ts
+├── config/           # Configuration files
+│   └── urls.ts
+└── index.ts          # Application entry point
 ```
 
-#### Get list
+## 🛠️ Installation
 
-```http
-  GET /{type}
+1. Clone the repository:
+```bash
+git clone https://github.com/Yash-RajSingh/Scapper-express.git
+cd Scapper-express-master
 ```
 
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `type`      | `string` | **Required**. Array of objects with internship listings. |
+2. Install dependencies:
+```bash
+npm install
+```
 
-#### Possible Parameters
+3. Build the project:
+```bash
+npm run build
+```
 
-| Parameter |
-| :-------- | 
-| `web_development` |
-| `app_development` |
-| `software_engineering` |
-| `graphic_design` |
-| `content_writing` |
-| `human_resource` |
-| `business_development` |
-| `data_analytics` |
-| `legal` |
-| `campus_ambassador` |
+## Usage
 
-Returns an array of objects with information about internship listings in the particular field.
+### Development
+```bash
+npm run dev
+```
 
+### Production
+```bash
+npm run build
+npm start
+```
 
-## Acknowledgements
- - The data displayed belongs to [Internshala](https://internshala.com/). I, in no way, own the information provided. 
+## API Endpoints
 
----
+| Endpoint | Description |
+|----------|-------------|
+| `GET /` | Welcome message |
+| `GET /openings/web_development` | Web development internships |
+| `GET /openings/graphic_design` | Graphic design internships |
+| `GET /openings/campus_ambassador` | Campus ambassador internships |
+| `GET /openings/content_writing` | Content writing internships |
+| `GET /openings/software_engineering` | Software engineering internships |
+| `GET /openings/legal` | Legal internships |
+| `GET /openings/business_development` | Business development internships |
+| `GET /openings/data_analytics` | Data analytics internships |
+| `GET /openings/human_resource` | Human resource internships |
+| `GET /openings/app_development` | App development internships |
 
-### Credits to Internshala
+## Response Format
 
+```json
+[
+  {
+    "role": "Frontend Developer Intern",
+    "company": "Tech Company",
+    "location": "Remote",
+    "stipend": "₹15,000 /month",
+    "apply_by": "31 Dec' 24",
+    "link": "/internship/detail/123456",
+    "logo": "https://internshala.com/logo.png",
+    "skills": ["React", "JavaScript", "CSS"]
+  }
+]
+```
+## License
 
+ISC License
+## Disclaimer
 
-##### Author - [Yash Raj Singh](https://github.com/Yash-RajSingh/)
+This scraper is for educational purposes only. Please respect Internshala's robots.txt and terms of service when using this tool.
