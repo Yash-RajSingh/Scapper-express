@@ -1,8 +1,7 @@
-import express from 'express';
-import cors from 'cors';
-import internshipRoutes from './routes/internshipRoutes';
+import express from "express";
+import cors from "cors";
+import internshipRoutes from "./routes/internshipRoutes";
 
-const PORT = process.env.PORT || 8000;
 const app = express();
 
 // Middleware
@@ -23,6 +22,11 @@ app.use('*', (req: express.Request, res: express.Response) => {
   res.status(404).json({ error: 'Route not found' });
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on PORT: ${PORT}`);
-}); 
+if (require.main === module) {
+  const PORT = process.env.PORT || 8000;
+  app.listen(PORT, () => {
+    console.log(`Server running on PORT: ${PORT}`);
+  });
+}
+
+export default app;
